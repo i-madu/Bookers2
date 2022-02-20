@@ -26,19 +26,19 @@
                   <i class="fa-solid fa-house-chimney"></i>Home
                   <% end %>
                 </li>
-                
+
                   <li class="nav-item">
-                    <%= link_to user_path, class: 'nav-link text-ligth' do %>
+                    <%= link_to user_path(current_user), class: 'nav-link text-ligth' do %>
                     <i class="fa-solid fa-users"></i>User
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     </i><%= link_to books_path, class: 'nav-link text-ligth' do %>
                     <i class="fa-solid fa-book-open"></i>Books
                     <% end %>
                   </li>
-                  
+
                   <li class="nav-item">
                     <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-ligth' do %>
                     <i class="fa-solid fa-right-to-bracket"></i>Log out
@@ -51,19 +51,19 @@
                   <i class="fa-solid fa-house-chimney"></i>Home
                   <% end %>
                 </li>
-              
+
                 <li class="nav-item">
                   <%= link_to about_path, class: 'nav-link text-ligth' do %>
                   <i class="fa-solid fa-link"></i>About
                   <% end %>
                 </li>
-              
+
                 <li class="nav-item">
                   <%= link_to new_user_registration_path, class: 'nav-link text-ligth' do %>
                   <i class="fa-solid fa-user-plus"></i>sign up
                   <% end %>
                 </li>
-              
+
                 <li class="nav-item">
                   <%= link_to new_user_session_path, class: 'nav-link text-ligth' do %>
                   <i class="fa-solid fa-right-to-bracket"></i>Log in
@@ -75,7 +75,7 @@
         </div>
       </nav>
     </header>
-     <main class="mb-auto">
+     <main class="mx-5 mb-auto">
        <%= flash[:notice] %>
        <%= yield %>
      </main>
@@ -87,11 +87,11 @@
           </div>
         </div>
       </dev class="container">
-      
+
     </footer>
 
 
 
-    
+
   </body>
 </html>
