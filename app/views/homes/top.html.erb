@@ -1,2 +1,20 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class ="container">
+  <div class ="row">
+    <div class ="mx-auto my-4 col-11 col-sm-10 col-lg-8 col-xl-6">
+    <h1>Welcom to<i class="fa-solid fa-book"></i><strong>Bookers!!</strong></h1>
+    <p>In <i class="fa-solid fa-book"></i>
+    <strong>bookers</strong>,</p>
+    <p>you can share and exchange your opinions , inpressions , and emotions</p>
+    <p>about various books!</p>
+    
+    <div class="d-grid gap-2 col-10 mx-auto">
+      <div ="row">
+        <%= link_to "Log in",new_user_session_path,class:"btn btn-info btn-md btn-block mb-3",type:"button" %>
+      </div>
+      <div ="row">
+        <%= link_to "Sign up",new_user_registration_path,class:"btn btn-success btn-md btn-block",type:"button" %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
