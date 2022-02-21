@@ -22,13 +22,13 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                   <li class="nav-item">
-                  <%= link_to root_path, class: 'nav-link text-ligth' do %>
+                  <%= link_to user_path(current_user), class: 'nav-link text-ligth' do %>
                   <i class="fa-solid fa-house-chimney"></i>Home
                   <% end %>
-                </li>
+                  </li>
 
                   <li class="nav-item">
-                    <%= link_to user_path(current_user), class: 'nav-link text-ligth' do %>
+                    <%= link_to users, class: 'nav-link text-ligth' do %>
                     <i class="fa-solid fa-users"></i>User
                     <% end %>
                   </li>
