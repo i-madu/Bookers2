@@ -1,0 +1,27 @@
+
+<div class="container px-5 px-md-0">
+ <%= render partial: "layouts/error_message",locals: {book: @book} %>
+  <div class="row py-5 px-md-5">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <h2>Editing Book</h2>
+        <%= form_with model: @book, local: true do |f| %>
+          <div class="form-group">
+            <%= f.label :Title %><br>
+            <%= f.text_field :title,class:"form w-100 px-3 py-1" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :Opinion %><br>
+            <%= f.text_area :body,class:"form w-100 px-3 py-1" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Update Book",class:"btn btn-success" %>
+          </div>
+        <% end %>
+
+        <%= link_to "Show",book_path(@book.id) %>
+        |
+        <%= link_to "Back",books_path %>
+    </div>
+  </div>
+</div>

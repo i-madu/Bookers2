@@ -6,9 +6,8 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   has_many:books,dependent: :destroy
   
-  validates :name, presence: true, lengh: { in: 2..20 }
-  validates :introduction, lengh: { maximum: 50 }
-  
+  validates :name, presence: true, length: { in: 2..20 },uniqueness: { case_sensitive: true }
+  validates :introduction, length: { maximum: 50 }
 
   def get_profile_image(width,height)
     unless profile_image.attached?
