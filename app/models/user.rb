@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :profile_image
   has_many:books,dependent: :destroy
-  
+
   validates :name, presence: true, length: { in: 2..20 },uniqueness: { case_sensitive: true }
   validates :introduction, length: { maximum: 50 }
 
@@ -17,4 +17,10 @@ class User < ApplicationRecord
       profile_image.variant(resize_to_limit: [width, height]).processed
   end
 
+  def self.guest
+    find_or_create_by!(name:'guestuser',email:'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = 'guestuser'
+    end
+  end
 end
